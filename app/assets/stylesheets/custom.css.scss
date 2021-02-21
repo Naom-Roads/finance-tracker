@@ -1,10 +1,14 @@
 @import 'bootstrap/dist/css/bootstrap';
 @import "font-awesome";
 
-    
+    .navbar {
+     width:100%
+
+    }
+
     // .navbar-brand {
-    
-    // font-size: 3rem;
+    // width: 100%;
+
     
     // }
     
@@ -21,4 +25,9 @@
     .no-left-padding {
        padding-left: 0 !important;
 
+    }
+
+    .form-group {
+        margin-left: 30px;
+     
     }
