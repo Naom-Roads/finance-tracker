@@ -2,5 +2,12 @@
 <h2>My portfolio</h2>
 </div>
 
+<% if @stock %>
+<div class="card card-header results-block">
+    <strong>Symbol: </strong> <%= @stock.ticker %>
+    <strong>Name: </strong> <%= @stock.name %>
+    <strong>Price: </strong> <%= @stock.last_price %>
+</div>
 
+<% end %>
 
