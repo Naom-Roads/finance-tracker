@@ -1,33 +1,37 @@
 @import 'bootstrap/dist/css/bootstrap';
 @import "font-awesome";
 
-    .navbar {
-     width:100%
-
-    }
-
-    // .navbar-brand {
-    // width: 100%;
-
+.navbar {
+    width: 100%;
     
-    // }
-    
-     
-    .search-area {
-        padding-top: 50px; 
-        margin-left: 30px;
-    }
+}
 
-    .no-right-padding {
-        padding-right: 0 !important; 
-    }
+.navbar-brand {
+    width: 100%;
+    padding: 10px 5px;
+    margin-right: 100px; 
 
-    .no-left-padding {
-       padding-left: 0 !important;
 
-    }
+}
 
-    .form-group {
-        margin-left: 30px;
-     
-    }
+
+.search-area {
+    width: 80%;
+    margin: 5px 0;
+
+
+}
+
+.no-right-padding {
+    padding-right: 0 !important;
+}
+
+.no-left-padding {
+    padding-left: 0 !important;
+
+}
+
+.form-group {
+    margin-left: 80px;
+
+}
