@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :user_stocks
   devise_for :users
   root 'dashboard#index'
   get 'welcome', to: 'dashboard#index'
