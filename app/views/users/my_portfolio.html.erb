@@ -1,7 +1,29 @@
 <div class="col-sm-4 m-10">
-<h2>My portfolio</h2>
+  <h2>My portfolio</h2>
 </div>
-
 <div id="results">
-
+  <div class="row">
+    <div class="col-9">
+      <table class="table table-dark table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Ticker</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @tracked_stocks.each do |stock| %>
+          <tr>
+            <th scope="row"><%= stock.ticker %></th>
+            <td><%= stock.name %></td>
+            <td><%= stock.last_price %></td>
+            <td><%= 'Action Placeholder' %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
