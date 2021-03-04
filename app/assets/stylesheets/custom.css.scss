@@ -3,21 +3,41 @@
 
 .navbar {
     width: 100%;
+    margin-bottom: 40px; 
+    display: flex;
+    flex-direction: row;
+
     
 }
 
-.navbar-brand {
-    width: 100%;
-    padding: 10px 5px;
-    margin-right: 100px; 
+// .navbar-brand {
+//     width: 100%;
+//     padding: 10px 5px;
+//     margin-right: 100px; 
 
+
+// }
+
+#my_portfolio {
+
+    align-content: auto; 
+  
+
+}
+
+#results {
+
+    font-size: 20px; 
+    align-content: center;
 
 }
 
 
 .search-area {
-    width: 80%;
-    margin: 5px 0;
+    display: inline-flex;
+    flex-direction: row;
+    margin-left: 80px; 
+  
 
 
 }
@@ -28,11 +48,6 @@
 
 .no-left-padding {
     padding-left: 0 !important;
-
-}
-
-.form-group {
-    margin-left: 80px;
 
 }
 

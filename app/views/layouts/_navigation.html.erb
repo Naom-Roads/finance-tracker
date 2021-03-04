@@ -1,6 +1,7 @@
  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Dashboard</a>
-  <div class="container">
+  <%= link_to 'FinanceTracker', root_path, class:"navbar-brand" %>
+    
+ <div class="container">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -15,11 +16,22 @@
       </ul>
     </div> %>
   </div>
+  
+ <% if current_user %>
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item"> 
+    <%= link_to("Log Out", destroy_user_session_path, class:'btn-btn-xs btn-danger', method: :delete) %>
+                             
+  </li>
+
+</ul>
+<% end %>
+
   <div class="search-area col-4">
       <%= form_tag search_stock_path, remote: true, method: :get do %>
         <div class="form-group row">
-          <div class="col-10 no-right-padding">
-            <%= text_field_tag :stock, params[:stock], placeholder: "Stock Ticker Symbol", autofocus: true, class: "form-control form-control-md"%>
+          <div class="col-8 no-right-padding">
+            <%= text_field_tag :stock, params[:stock], placeholder: "Stock Ticker Symbol", autofocus: true, class:"form-inline my-2 my-lg-0 form-control form-control-md"%>
           </div>
           <div class="no-left-padding">
             <%= button_tag type: :submit, class: "btn btn-outline-success" do %>
@@ -27,9 +39,12 @@
             <% end %>
           </div>
         </div>
-      <% end %>
+     
     </div>
+     <% end %>
+  </div>
 </div>
-</div>
+
 </nav>
 </div>
+
