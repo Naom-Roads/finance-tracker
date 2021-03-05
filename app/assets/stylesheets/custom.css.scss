@@ -3,9 +3,10 @@
 
 .navbar {
     width: 100%;
-    margin-bottom: 40px; 
+    margin-bottom: 30px; 
     display: flex;
     flex-direction: row;
+   justify-content: center;
 
     
 }
@@ -32,14 +33,29 @@
 
 }
 
+.form-group {
+    margin: 0; 
+    padding: 5px 2px; 
 
+}
 .search-area {
-    display: inline-flex;
+    display: flex;
     flex-direction: row;
-    margin-left: 80px; 
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0px; 
+
   
+  
+}
 
-
+.right-container {
+    display: flex; 
+    flex-direction: row;
+    align-items: center; 
+    align-content: center;
+    padding: 0px; 
+   
 }
 
 .no-right-padding {
