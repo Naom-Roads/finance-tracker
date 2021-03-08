@@ -1,6 +1,10 @@
 <div id="my_porfolio" class="col-sm-4 m-10 mb-3" >
   <h2>MY PORTFOLIO</h2>
 </div>
+
+<div>
+<%= render 'users/result' %>
+</div>
 <% if !@tracked_stocks.empty? %>
 
 <%= render 'stocks/list' %>
