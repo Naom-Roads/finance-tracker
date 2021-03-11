@@ -1,15 +1,10 @@
-<div id="my_porfolio" class="col-sm-4 m-10 mb-3" >
-  <h2>MY PORTFOLIO</h2>
+
+<h1>My Portfolio</h1>
+
 </div>
+<div id="results">
 
-<div>
-<%= render 'users/result' %>
 </div>
-
-
-<%= render 'stocks/list' %>
-
-
 <% if !@tracked_stocks.empty? %>
-
+  <%= render 'stocks/list'%>
 <% end %>
