@@ -22,14 +22,17 @@
  <% if current_user %>
  
 <div class="right-container col-6 no-right-padding">
-  <ul class="navbar-nav ml-auto col-2 no-right-padding">
+  <ul class="navbar-nav ml-auto no-right-padding">
+     <li class="nav-item user-name"> 
+     <%= current_user.full_name %>
+     </li>
     <li class="nav-item"> 
     <%= link_to("Log Out", destroy_user_session_path, class:'btn btn-danger', method: :delete) %>                     
   </li>
 </ul>
 <% end %>
 
-<div class="search-area col-5 no-left-padding">
+<div class="search-area no-left-padding">
       <%= form_tag search_stock_path, remote: true, method: :get do %>
         <div class="form-group row pt-2 no-left-padding">
           <div class="col-8 no-right-padding">
