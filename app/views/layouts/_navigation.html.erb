@@ -11,8 +11,22 @@
         
           <%= link_to "My Portfolio", my_portfolio_path, class:"nav-link"%>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+
+           <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           Profile
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><%= link_to edit_user_registration_path, class:"dropdown-item" do %>  
+          <%= fa_icon 'edit' %> Edit Profile
+          <%end%></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+   
+          </div>
         </li>
       </ul>
     </div>
@@ -24,7 +38,7 @@
 <div class="right-container col-6 no-right-padding">
   <ul class="navbar-nav ml-auto no-right-padding">
      <li class="nav-item user-name"> 
-     <%= current_user.full_name %>
+     <%= fa_icon 'user' %>  <%= current_user.full_name %>
      </li>
     <li class="nav-item"> 
     <%= link_to("Log Out", destroy_user_session_path, class:'btn btn-danger', method: :delete) %>                     

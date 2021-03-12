@@ -20,5 +20,8 @@ require("channels")
 
 import "bootstrap"
 
+$(document).ready(function() {
+    $(".dropdown-toggle").dropdown();
+});
 
 
