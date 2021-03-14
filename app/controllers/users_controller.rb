@@ -12,6 +12,8 @@ class UsersController < ApplicationController
     @tracked_stocks = @user.stocks
   end 
 
+
+
 end
 
 
