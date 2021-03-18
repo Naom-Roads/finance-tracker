@@ -12,14 +12,6 @@ class UsersController < ApplicationController
     @tracked_stocks = @user.stocks
   end 
 
-  def friend_portfolio 
-    @friend = Friendships.find(params[:friend_id])
-    @friend_portfolio = @friend.stocks
-    
-
-  end 
-
-  
 
 
 end
