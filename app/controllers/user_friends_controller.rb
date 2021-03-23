@@ -1,33 +1,47 @@
 class UserFriendsController < ApplicationController
  
   def index
-  
-  end
-  
- def show
 
- end
-  
-  def create
-      @user_friends = user_friends.create(params[:friend_id])
+
+    @user = current_user
+    @tracked_friends = @user.friends
 
   end
+
+
+#  def tracked_friends
+
+  
+#   @tracked_friends = user.friendships(params[:id]) 
+
+
+#  end
+  
+#  def create
+#   @friend = friendships.check_db(params[:email])
+#   if friend.blank?
+#     friend = friend.new_lookup(params[:email])
+#     friend.save
+#   end
+#   @user_friends = Friendships.create(user: friend_id, email: email)
+#   flash[:notice] = "#{friend.name} was successfully added to your list of friends"
+#   redirect_to friend_portfolio_path
+# end
     
   def friend_portfolio 
-    @user_friends = Friendships.find(params[:friend_id])
-    @user_friends_portfolio = user_friend.tracked_stocks
-  
+   
+    @tracked_stocks = User.find(params[:friend_id]).stocks
+
   end 
 
-  def friendships
-    @user_friend = user_friend.friendships
-    @tracked_friends = UserFriendships.find(params[:friend_id])
-  
-  end
+  # def friendships
+  #   @my_friendships = 
+
+  # end
 
     
-  def destroy
+#   def destroy
 
-  end
+#   end
 
 end

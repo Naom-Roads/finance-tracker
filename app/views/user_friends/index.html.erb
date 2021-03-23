@@ -14,8 +14,19 @@
           </tr>
         </thead>
         <tbody>
-       
+         <% @tracked_friends.each do |friend| %>
+          <tr>
+            <th scope="row"><%= friend.full_name %></th>
+            <td><%= friend.email %></td>
+            <td><%= link_to "Portfolio", friend_portfolio_path(friend_id: friend.id) %></td>
+            <td><%= link_to 'Remove', user_friends_url(friend), method: :delete, data: {confirm: 'Are you Sure?'},
+            class: 'btn btn-xs btn-warning'  %></td>
+          </tr>
+          <% end %>
+    
+        </tbody>
+      </tbody>
+</table>
 
-       
     </div>      
 

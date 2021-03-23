@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   get 'welcome', to: 'dashboard#index'
   get 'my_portfolio', to: 'users#my_portfolio'
   get 'search_stock', to: 'stocks#search'
-  get 'friendships', to: 'friendships#user_friends'
-  # get 'friend_portfolio', to: 'user_friends#friend_portfolio'
+  get 'user_friends', to: 'user_friends#index'
+  get 'friend_portfolio', to: 'user_friends#friend_portfolio'
 
  
 
