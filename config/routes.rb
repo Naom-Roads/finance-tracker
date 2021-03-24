@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
 
- resources :user_friends
+ resources :friends
  resources :user_stocks, only: [:create, :destroy]
   devise_for :users
   root 'dashboard#index'
   get 'welcome', to: 'dashboard#index'
   get 'my_portfolio', to: 'users#my_portfolio'
   get 'search_stock', to: 'stocks#search'
-  get 'user_friends', to: 'user_friends#index'
+  get 'my_friends', to: 'users#my_friends'
   #get 'friends_portfolio', to: 'user_friends#friend_portfolio' 
 
-  get 'friends/:id/portfolio', to: 'user_friends#friend_portfolio', as: 'friend_portfolio'
+  get 'friends/:id/portfolio', to: 'users#friend_portfolio', as: 'friend_portfolio'
 
 
   # Route structure : 
