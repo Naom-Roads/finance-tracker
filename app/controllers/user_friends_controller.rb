@@ -30,7 +30,7 @@ class UserFriendsController < ApplicationController
     
   def friend_portfolio 
    
-    @tracked_stocks = User.find(params[:friend_id]).stocks
+    @tracked_stocks = User.find(params[:id]).stocks
 
   end 
 
