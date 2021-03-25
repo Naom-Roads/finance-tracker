@@ -20,12 +20,36 @@ class UsersController < ApplicationController
 
 
   def friend_portfolio 
-   
-    @tracked_stocks = User.find(params[:id]).stocks
+    
+    @friend = User.find(params[:id])
+    @tracked_stocks = @friend.stocks
 
   end 
 
-end
+  def search
+    if params[:friend].present?
+      @friend = Friend.new_lookup(params[:friend])
+      if @friend
+        respond_to do |format|
+          format.js { render partial: 'friends/result' }
+        end
+      else
+        respond_to do |format|
+            flash.now[:alert] = 'Please enter a valid email to search'
+            format.js { render partial: 'friends/result' }
+        end 
+      end
+    else
+        respond_to do |format|
+            flash.now[:alert] = 'Please enter an email'
+            format.js { render partial: 'friends/result' }
+        end
+    end
+  end
+
+end 
+
+
 
 
 
