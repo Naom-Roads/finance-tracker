@@ -51,15 +51,18 @@ background-color: lightblue;
     padding: 5px 2px; 
 
 }
-.search-area {
+.nav-search {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
    
-    
-  
-  
+}
+
+.search {
+
+ padding-bottom: 20px; 
+
 }
 
 .right-container {

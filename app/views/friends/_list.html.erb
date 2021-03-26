@@ -1,19 +1,31 @@
 
+  <%= render 'result' %>
 <div class="results-table">
-<h1>Friends</h1>
+
+  <h1>Friends</h1>
   <div class="row">
     <div class="col-10">
-      <table class="table table-dark table-hover">
-        <thead>
-          <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Portfolio</th>
-            <th scope="col">Remove</th>
-          </tr>
-        </thead>
-        <tbody>
-         <% @friends.each do |friend| %>
+      <div class="search">
+        <form class="d-flex">
+          <%= form_tag search_friend_path, remote: true, method: :get do %>
+            <%= text_field_tag :email, params[:email], placeholder: "User Email", autofocus: true, class:"form-control me-2"%>
+               <%= button_tag type: :submit, class:"btn btn-success" do %> 
+            <%= 'Search' %>
+          <% end %>
+      </form>
+    </div>
+    <% end %>
+    <table class="table table-dark table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Portfolio</th>
+          <th scope="col">Remove</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @friends.each do |friend| %>
           <tr>
             <th scope="row"><%= friend.full_name %></th>
             <td><%= friend.email %></td>
@@ -21,11 +33,8 @@
             <td><%= link_to 'Stop Following', friends_url(friend), method: :delete, data: {confirm: 'Are you Sure?'},
             class: 'btn btn-xs btn-warning'  %></td>
           </tr>
-          <% end %>
-    
-        </tbody>
+        <% end %>
       </tbody>
-</table>
-
-    </div>      
-
+    </tbody>
+  </table>
+</div>
