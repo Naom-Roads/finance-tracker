@@ -3,8 +3,6 @@
 <div class="results-table">
 <h2><%= "#{@friend.first_name}'s Portfolio" %></h2>
 
-
-
 <% if !@tracked_stocks.empty? %>
   <%= render 'stocks/list'%>
 <% end %>

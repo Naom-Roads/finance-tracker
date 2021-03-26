@@ -6,10 +6,10 @@
 <div class="card card-header results-block">
     <strong>Name: </strong> <%= @friend.full_name %>
     <strong>Email: </strong> <%= @friend.email %>
-    <%# <strong> </strong> <%= @friend.last_price %>
+  
    
     <% if current_user.can_track_friend?(@friend.email) %>
-    <%= link_to 'Add to Friends List', my_friends_path(user: current_user, email: @frined.email), 
+    <%= link_to 'Add to Friends List', my_friends_path(user: current_user, email: @friend.email), 
                                     class: "btn btn-xs btn-success", method: :post %>
 
                                      <% else %>

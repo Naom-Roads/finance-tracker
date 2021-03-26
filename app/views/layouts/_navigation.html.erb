@@ -56,21 +56,6 @@
 </ul>
 <% end %>
 
-<div class="nav-search no-left-padding">
-      <%= form_tag search_stock_path, remote: true, method: :get do %>
-        <div class="form-group row pt-2 no-left-padding">
-          <div class="col-8 no-right-padding">
-            <%= text_field_tag :stock, params[:stock], placeholder: "Stock Ticker Symbol", autofocus: true, class:"form-inline my-2 my-lg-0 form-control form-control-md"%>
-          </div>
-          <div class="no-left-padding">
-            <%= button_tag type: :submit, class: "btn btn-outline-success" do %>
-              <%= fa_icon 'search' %>
-            <% end %>
-          </div>
-        </div>
-     
-    </div>
-     <% end %>
   </div>
 </div>
 </div>
