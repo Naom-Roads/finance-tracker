@@ -1,0 +1,49 @@
+
+  
+  
+    <div class="results-table">
+      <div class="row">
+      <div class="col-10">
+        <div class="search">
+            <%= form_tag search_stock_path, remote: true, method: :get do %>
+            <div class="form-group row">
+            <div class="col-sm-9 no-right-padding">
+              <%= text_field_tag :stock, params[:stock], placeholder: "Stock Ticker Symbol", autofocus: true, class:"form-control me-2" %>
+           </div>
+            <div class="col-sm-3 no-left-padding">
+            <%= button_tag type: :submit, class:"btn btn-success" do %>
+              <%= 'Search' %>
+            <% end %>
+        </div>
+        </div>
+      <% end %>
+   </div>
+   
+  <div id="results">
+    </div>
+
+
+
+      <table class="table table-dark table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Email</th>
+            <th scope="col">Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @friends.each do |friend| %>
+          <tr>
+            <th scope="row"><%= friend.email %></th>
+            <td><%= friend.first_name %></td>
+            <td><%= friend.last_name %></td>
+            <td><%= link_to 'Stop Following', '#', method: :delete, data: {confirm: 'Are you Sure?'},
+            class: 'btn btn-xs btn-warning'  %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  default_url_options :host => "localhost:3000"
+
  resources :friends
  resources :user_stocks, only: [:create, :destroy]
   devise_for :users
