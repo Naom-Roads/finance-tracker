@@ -5,7 +5,7 @@ require 'sprockets/railtie'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
-Bundler.require(*Rails.groups).heroku bundle exec rake -p
+Bundler.require(*Rails.groups).heroku bundle exec rake p
 Bundler.require(:default, :assets, Rails.env)
 
 module FinanceTracker
