@@ -29,14 +29,15 @@ class UsersController < ApplicationController
   def search
 
     if params[:friend].present?
-      @friend = Friendship.new_lookup(params[:friend])
-      if @friend
+      @friends = User.search(params[:friend])
+      @friends = current_user.except_current_user(@friends)
+      if @friends
         respond_to do |format|
           format.js { render partial: 'friends/result' }
         end
       else
         respond_to do |format|
-            flash.now[:alert] = 'Please enter a valid email to search'
+            flash.now[:alert] = "Could not find User"
             format.js { render partial: 'friends/result' }
         end 
       end

@@ -25,7 +25,6 @@ class User < ApplicationRecord
 end
 
   def full_name
-   
     return "#{first_name} #{last_name}" if first_name || last_name
 
     'Anonymous'
@@ -57,5 +56,13 @@ end
 
   def self.matches(field_name, param)
     where("#{field_name} like ?", "%#{param}%")
+  end
+
+  def except_current_user(users)
+    users.reject { |user| user.id == id }
+  end
+
+  def not_friends_with?(id_of_friend)
+    !friends.where(id: id_of_friend).exists?
   end
 end

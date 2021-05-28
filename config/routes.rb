@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   default_url_options :host => "localhost:3000"
 
  resources :friends 
+ resources :users, only: [:show]
  resources :dashboard, only: [:index]
  resources :user_stocks, only: [:create, :destroy]
+ resources :friendships, only: [:create, :destroy]
  devise_for :users, controllers: { 
    confirmations: 'confirmations'
   }
@@ -20,7 +22,7 @@ Rails.application.routes.draw do
 
   get 'my_friends/:id/portfolio', to: 'users#friend_portfolio', as: 'friend_portfolio'
  
-
+  
 
   # Route structure : 
   # verb (get | post | put | patch | delete)

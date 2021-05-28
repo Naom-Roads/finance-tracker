@@ -1,27 +1,28 @@
-<div class='results-block'>
-<%= render 'layouts/messages' %>
+<div class="results-block">
+  <%= render 'layouts/messages' %>
 </div>
-
-<% if @friend %>
-<div class="card card-header results-block">
-    <strong>Name: </strong> <%= @friend.full_name %>
-    <strong>Email: </strong> <%= @friend.email %>
-  
-   
-    <% if current_user.can_track_friend?(@friend.email) %>
-    <%= link_to 'Add to Friends List', my_friends_path(user: current_user, email: @friend.email), 
-                                    class: "btn btn-xs btn-success", method: :post %>
-
-                                     <% else %>
-    <span class="badge badge-secondary">
-    You are already tracking this friend
-    
-    <% if current_user.friend_already_tracked?(@friend.email) %> 
-    this friend
+<% if @friends %>
+  <div class="card card-header results-block">
+    <table class="col-md-12">
+      <tbody>
+        <% @friends.each do |friend| %>
+          <tr>
+            <td><strong>Name: </strong> <%= friend.full_name %></td>
+            <td><strong>Email: </strong> <%= friend.email %></td>
+            <td><strong>Actions: </strong> <%= link_to "View Profile", '#',
+      class:"btn btn-sm btn-success" %>
+            <% if current_user.not_friends_with?(friend.id) %>
+                <%= link_to 'Follow Friend ?', friendships_path(friend: friend), 
+                                    class: "btn btn-sm btn-success", method: :post %>
+            <% else %>
+                <span class="badge badge-secondary">
+                You are friends
+                </span>
+            <% end  %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 <% end %>
-</span>
-<% end %>
-</div>
-<% end %>
-
-
