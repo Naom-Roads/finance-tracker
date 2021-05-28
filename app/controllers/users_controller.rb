@@ -27,8 +27,9 @@ class UsersController < ApplicationController
   end 
 
   def search
+
     if params[:friend].present?
-      @friend = Friend.new_lookup(params[:friend])
+      @friend = Friendship.new_lookup(params[:friend])
       if @friend
         respond_to do |format|
           format.js { render partial: 'friends/result' }
@@ -46,9 +47,6 @@ class UsersController < ApplicationController
         end
     end
   end
-
-
-
 end 
 
 
