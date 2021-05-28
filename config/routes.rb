@@ -5,17 +5,20 @@ Rails.application.routes.draw do
  resources :friends 
  resources :dashboard, only: [:index]
  resources :user_stocks, only: [:create, :destroy]
- devise_for :users, controllers: { confirmations: 'confirmations'}
+ devise_for :users, controllers: { 
+   confirmations: 'confirmations'
+  }
 
   root 'dashboard#index'
-  get 'welcome', to: 'dashboard#index'
+  get 'index', to: 'dashboard#index'
   get 'my_portfolio', to: 'users#my_portfolio'
   get 'search_stock', to: 'stocks#search'
   get 'search_friend', to: 'users#search'
   get 'my_friends', to: 'users#my_friends'
+  post 'friend', to: 'users#friends'
   #get 'friends_portfolio', to: 'user_friends#friend_portfolio' 
 
-  get 'friends/:id/portfolio', to: 'users#friend_portfolio', as: 'friend_portfolio'
+  get 'my_friends/:id/portfolio', to: 'users#friend_portfolio', as: 'friend_portfolio'
  
 
 

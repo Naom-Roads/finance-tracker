@@ -10,6 +10,7 @@ class UserStocksController < ApplicationController
     redirect_to my_portfolio_path
   end
 
+
 def destroy 
     stock = Stock.find(params[:id])
     user_stock = UserStock.where(user_id: current_user.id, stock_id: stock.id).first
