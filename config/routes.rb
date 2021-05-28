@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   default_url_options :host => "localhost:3000"
 
  resources :friends 
+ resources :friendships, only: [:create, :destroy]
  resources :users, only: [:show]
  resources :dashboard, only: [:index]
  resources :user_stocks, only: [:create, :destroy]
- resources :friendships, only: [:create, :destroy]
  devise_for :users, controllers: { 
    confirmations: 'confirmations'
   }

@@ -1,28 +1,23 @@
-
-  
-  
-    <div class="results-table">
-    <h1>My Portfolio</h1>
-      <div class="row">
-      <div class="col-10">
-        <div class="search">
-            <%= form_tag search_stock_path, remote: true, method: :get do %>
-            <div class="form-group row">
+<div class="results-table">
+  <h1>Portfolio</h1>
+  <div class="row">
+    <div class="col-10">
+      <div class="search">
+        <%= form_tag search_stock_path, remote: true, method: :get do %>
+          <div class="form-group row">
             <div class="col-sm-9 no-right-padding">
               <%= text_field_tag :stock, params[:stock], placeholder: "Stock Ticker Symbol", autofocus: true, class:"form-control me-2" %>
-           </div>
+            </div>
             <div class="col-sm-3 no-left-padding">
-            <%= button_tag type: :submit, class:"btn btn-success" do %>
-              <%= 'Search' %>
-            <% end %>
-        </div>
-        </div>
-      <% end %>
-   </div>
-   
-  <div id="results">
-    </div>
-
+              <%= button_tag type: :submit, class:"btn btn-success" do %>
+                <%= 'Search' %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div id="results">
+      </div>
       <table class="table table-dark table-hover">
         <thead>
           <tr>
@@ -33,16 +28,34 @@
           </tr>
         </thead>
         <tbody>
-        <% @tracked_stocks.each do |stock| %>
-          <tr>
-            <th scope="row"><%= stock.ticker %></th>
-            <td><%= stock.name %></td>
-            <td><%= stock.last_price %></td>
-            <td><%= link_to 'Remove', user_stock_path(stock), method: :delete, data: {confirm: 'Are you Sure?'},
-            class: 'btn btn-xs btn-warning'  %></td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-  </div>
+          <% @tracked_stocks.each do |stock| %>
+            <tr>
+              <th scope="row"><%= stock.ticker %></th>
+              <td><%= stock.name %></td>
+              <td><%= stock.last_price %></td>
+
+          <td> <% if current_user.can_track_stock?(stock.ticker) %>
+
+             <%= link_to 'Add to Portfolio', user_stocks_path(user: current_user, ticker: stock.ticker), 
+                                    class: "btn btn-xs btn-success", method: :post %> 
+              <% elsif current_user.id != @user.id%>
+                <span class="badge badge-secondary">
+                  You are already tracking
+                  <% if !current_user.under_stock_limit? %>
+                    10 stocks 
+                    <%end%>
+                    </span>
+                  <% end %>
+
+                 <% if current_user.id == @user.id %>
+
+                      <td> <%= link_to 'Remove', user_stock_path(stock), method: :delete, data: {confirm: 'Are you Sure?'},
+            class: 'btn btn-xs btn-warning'  %>
+                    <%end%>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
