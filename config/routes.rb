@@ -9,7 +9,7 @@ Rails.application.routes.draw do
  resources :user_stocks, only: [:create, :destroy]
  devise_for :users, controllers: { 
    confirmations: 'confirmations'
-  }
+ }
 
   root 'dashboard#index'
   get 'index', to: 'dashboard#index'
