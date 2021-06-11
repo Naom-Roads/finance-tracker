@@ -7,7 +7,8 @@ Rails.application.routes.draw do
  resources :users, only: [:show]
  resources :dashboard, only: [:index]
  resources :user_stocks, only: [:create, :destroy]
- devise_for :users, controllers: { 
+ devise_for :users, path: 'auth', controllers: { sign_in: 'login',
+ sign_out: 'logout',
    confirmations: 'confirmations'
  }
 
