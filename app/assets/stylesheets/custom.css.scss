@@ -1,6 +1,15 @@
 @import 'bootstrap/dist/css/bootstrap';
 @import "font-awesome";
 
+html body {
+
+background-color: whitesmoke;
+  background-image: url("candlestickgraph1.jpg") !important;
+  background-size: 100% auto; 
+  background-repeat: no-repeat; 
+  filter: saturate(300%)
+}
+
 .navbar {
     width: 100%;
     margin-bottom: 30px; 
@@ -11,18 +20,9 @@
 
     }
 
-.background-stonks {
-background-color: lightblue;
-  background-image: url("stonks_meme.jpg");
-  background-size: 108%; 
-  background-repeat: no-repeat; 
-  filter: saturate(300%)
-  
- 
-}
 
 .navbar-brand {
-  font-size: 30px;
+  font-size: 50px;
 
 
 }
@@ -31,6 +31,7 @@ background-color: lightblue;
     color: black;
  
 }
+
 
 #my_portfolio {
 
@@ -50,6 +51,18 @@ background-color: lightblue;
     margin: 0; 
     padding: 5px 2px; 
 
+}
+
+.card-body {
+    margin: 10px; 
+    padding: 20px 30px; 
+    background: #343A40; 
+    color: white; 
+    width: 60%; 
+
+  
+    
+   
 }
 .nav-search {
     display: flex;
