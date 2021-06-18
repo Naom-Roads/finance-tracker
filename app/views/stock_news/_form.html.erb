@@ -1,0 +1,17 @@
+<%= form_with(model: stock_news) do |form| %>
+  <% if stock_news.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(stock_news.errors.count, "error") %> prohibited this stock_news from being saved:</h2>
+
+      <ul>
+        <% stock_news.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

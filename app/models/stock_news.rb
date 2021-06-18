@@ -1,0 +1,2 @@
+class StockNews < ApplicationRecord
+end

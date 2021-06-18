@@ -89,6 +89,8 @@ GEM
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     erubi (1.10.0)
+    ethon (0.14.0)
+      ffi (>= 1.15.0)
     faraday (1.4.1)
       faraday-excon (~> 1.1)
       faraday-net_http (~> 1.0)
@@ -101,6 +103,9 @@ GEM
     faraday_middleware (1.0.0)
       faraday (~> 1.0)
     ffi (1.15.0)
+    finnhub_ruby (1.1.2)
+      json (~> 2.1, >= 2.1.0)
+      typhoeus (~> 1.0, >= 1.0.1)
     font-awesome-rails (4.7.0.7)
       railties (>= 3.2, < 7)
     globalid (0.4.2)
@@ -118,6 +123,7 @@ GEM
       money_helper
     jbuilder (2.11.2)
       activesupport (>= 5.0.0)
+    json (2.3.0)
     listen (3.5.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -233,6 +239,8 @@ GEM
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
+    typhoeus (1.4.0)
+      ethon (>= 0.9.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unf (0.1.4)
@@ -271,6 +279,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   devise
   devise-bootstrap-views (~> 1.0)
+  finnhub_ruby (~> 1.1, >= 1.1.2)
   font-awesome-rails
   iex-ruby-client
   jbuilder (~> 2.7)
