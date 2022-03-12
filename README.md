@@ -2,21 +2,26 @@
 
 This is a finance tracker app from the Complete Ruby on Rails Course
 
-* Ruby version 6 
+## Key Features
 
-* System dependencies
+* User can create profile
+* User can locate stocks and track them
+* User can view the stocks of other friends
 
-* Configuration
 
-* Database creation
+## Technologies Used
 
-* Database initialization
+* IEX Cloud API - https://iexcloud.io/
+* Mailcatcher
+* Ruby version 6
+* Devise
+* postgresSQL DB
 
-* How to run the test suite - This is just a prototype
+## Resources 
 
-* Services (job queues, cache servers, search engines, etc.)
+* IEX Cloud API - https://iexcloud.io/
+* MailCatcher - https://mailcatcher.me/
 
-* Deployment instructions
 
-* Mailcatcher is installed 
+
 
